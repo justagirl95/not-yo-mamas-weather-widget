@@ -11,13 +11,10 @@ const data = await res.json();
 const temp = Math.round(data.current.temperature_2m);
 const code = data.current.weather_code;
 
-const weatherText = weatherCodeToText(code);
-const weatherIcon = weatherCodeToIcon(code);
-
-document.getElementById("weather").textContent = `${temp}°F · ${weatherText}`;
-document.getElementById("weather-icon").textContent = weatherIcon;
+document.getElementById("weather").textContent = `${temp}°F · ${weatherCodeToText(code)}`;
+document.getElementById("weather-icon").textContent = weatherCodeToIcon(code);
 } catch (err) {
-document.getElementById("weather").textContent = "Unable to load weather";
+document.getElementById("weather").textContent = "Weather hidden in the mist";
 }
 }
 
@@ -46,6 +43,7 @@ const map = {
 
 return map[code] || "Sky in flux";
 }
+
 function weatherCodeToIcon(code) {
 if (code === 0) return "☀️";
 if (code === 1) return "🌤️";
@@ -71,41 +69,40 @@ let oracle = "";
 if (phase < 0.03 || phase > 0.97) {
 phaseName = "New Moon";
 phaseIcon = "🌑";
-oracle = "A quiet soil moment. Rest, reset, and plant intentions gently.";
+oracle = "The garden rests in dark soil. A good day for quiet beginnings.";
 } else if (phase < 0.22) {
 phaseName = "Waxing Crescent";
 phaseIcon = "🌒";
-oracle = "Tiny green shoots energy. Start small and trust the unfolding.";
+oracle = "Tender sprout energy. Start small, but start.";
 } else if (phase < 0.28) {
 phaseName = "First Quarter";
 phaseIcon = "🌓";
-oracle = "Momentum with a little tension. Prune distractions and keep growing.";
+oracle = "Growth asks for structure today. Stake the stems you want to keep.";
 } else if (phase < 0.47) {
 phaseName = "Waxing Gibbous";
 phaseIcon = "🌔";
-oracle = "Almost-bloom energy. Tend what’s working and give it more light.";
+oracle = "The greenhouse is gathering momentum. Nourish what is already blooming.";
 } else if (phase < 0.53) {
 phaseName = "Full Moon";
 phaseIcon = "🌕";
-oracle = "The greenhouse glows. Celebrate what’s alive, visible, and thriving.";
+oracle = "Everything glows a little brighter. Let yourself be seen.";
 } else if (phase < 0.72) {
 phaseName = "Waning Gibbous";
 phaseIcon = "🌖";
-oracle = "Harvest wisdom. Notice what flourished and what wants to be shared.";
+oracle = "Harvest what worked. Share the bloom, keep the wisdom.";
 } else if (phase < 0.78) {
 phaseName = "Last Quarter";
 phaseIcon = "🌗";
-oracle = "Time to prune. Let go of what drains the garden.";
+oracle = "Prune gently. Not everything needs to keep growing.";
 } else {
 phaseName = "Waning Crescent";
 phaseIcon = "🌘";
-oracle = "Soft fading light. Compost the old and make room for the next cycle.";
+oracle = "Compost the old season. Make room for the next little miracle.";
 }
 
 document.getElementById("moon-phase").textContent = phaseName;
 document.getElementById("moon-icon").textContent = phaseIcon;
 document.getElementById("oracle-message").textContent = oracle;
 }
-
 getWeather();
 getMoonPhase();

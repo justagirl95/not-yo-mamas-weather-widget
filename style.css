@@ -1,0 +1,108 @@
+body {
+margin: 0;
+padding: 0;
+background: transparent;
+font-family: "Georgia", "Times New Roman", serif;
+}
+
+.card {
+position: relative;
+width: 340px;
+padding: 20px 18px;
+overflow: hidden;
+border-radius: 24px;
+color: #f8f3ff;
+background:
+radial-gradient(circle at top left, rgba(172, 255, 210, 0.15), transparent 35%),
+radial-gradient(circle at top right, rgba(210, 185, 255, 0.18), transparent 30%),
+linear-gradient(160deg, #18281f 0%, #223127 25%, #2d2140 65%, #191627 100%);
+border: 1px solid rgba(232, 255, 240, 0.15);
+box-shadow:
+0 10px 30px rgba(0, 0, 0, 0.30),
+inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.sparkles {
+position: absolute;
+inset: 0;
+pointer-events: none;
+background-image:
+radial-gradient(circle, rgba(255,255,255,0.65) 1px, transparent 1px),
+radial-gradient(circle, rgba(208,255,231,0.55) 1px, transparent 1px),
+radial-gradient(circle, rgba(230,214,255,0.55) 1px, transparent 1px);
+background-size: 120px 120px, 160px 160px, 200px 200px;
+background-position: 20px 30px, 80px 90px, 140px 40px;
+opacity: 0.35;
+}
+
+.title {
+position: relative;
+text-align: center;
+font-size: 21px;
+font-weight: bold;
+letter-spacing: 0.4px;
+color: #f4eaff;
+margin-bottom: 4px;
+text-shadow: 0 0 12px rgba(220, 199, 255, 0.18);
+}
+
+.subtitle {
+position: relative;
+text-align: center;
+font-size: 12px;
+letter-spacing: 1.2px;
+text-transform: uppercase;
+color: rgba(230, 255, 239, 0.72);
+margin-bottom: 16px;
+}
+.section {
+position: relative;
+margin-bottom: 14px;
+padding: 12px 14px;
+border-radius: 16px;
+background: rgba(255,255,255,0.05);
+border: 1px solid rgba(255,255,255,0.06);
+backdrop-filter: blur(4px);
+}
+
+.label {
+font-size: 11px;
+text-transform: uppercase;
+letter-spacing: 1.4px;
+color: rgba(233, 255, 242, 0.62);
+margin-bottom: 8px;
+}
+
+.main-line {
+display: flex;
+align-items: center;
+gap: 10px;
+font-size: 18px;
+color: #fffafc;
+}
+
+#weather-icon,
+#moon-icon {
+font-size: 28px;
+width: 34px;
+text-align: center;
+}
+
+.oracle {
+position: relative;
+margin-top: 6px;
+padding: 12px 14px;
+border-radius: 16px;
+background: rgba(204, 168, 255, 0.08);
+border: 1px solid rgba(223, 196, 255, 0.10);
+font-size: 13px;
+line-height: 1.45;
+color: #f1e7ff;
+font-style: italic;
+}
+@media (max-width: 400px) {
+.card {
+width: 100%;
+box-sizing: border-box;
+}
+}
